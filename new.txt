@@ -1,3 +1,8 @@
+Davidziuk Tatsiana Mihailovna
+44
+1 cat
+1 bln USD per month
+
 Common Test Case management assumptions:
 1) Story is always assigned to the manual QA with a sub-task. The main story is always assigned to the developer.
 2) Label "clarification_needs" is set for the test cases in DRAFT status that are not ready for PO approval but are not actively developed at the moment. 
