@@ -1,0 +1,19 @@
+Common Test Case management assumptions:
+1) Story is always assigned to the manual QA with a sub-task. The main story is always assigned to the developer.
+2) Label "clarification_needs" is set for the test cases in DRAFT status that are not ready for PO approval but are not actively developed at the moment. 
+3) PO is being asked for test cases approval with a comment in the story, mentioning the PO name. NOTE: Before the first official release to the customer is it allowed to replace the PO approval with the QA peer-review. After the product is made available to the customers (January 2024) the PO approval is mandatory. This is not allowed for a test case creator to approve the test case. The test cases MUST NOT be created after the development is complete to match what is implemented. Test cases should be based on the QA understanding on the acceptance criteria. 
+4) Test case is being approved by the PO by changing the status from DRAFT to APPROVED (any feedback that require clarification or rework does not need to be registered in JIRA. It is allowed for the PO to contact the QA team directly and clarify the doubts and issues).  NOTE: Before the first official release to the customer is it allowed to replace the PO approval with the QA peer-review. After the product is made available to the customers (January 2024) the PO approval is mandatory. 
+5) Test cases that should not be automated (e.g. checking the UI conformance with the mockup) should be labeled "not_for_automation".
+6) Test cases that should be automated should have a label "ready_for_automation".
+7) Once the test case is automated the "Automated" check box is set to "true". Label "ready_for_automation" should remain set. 
+8) Every significant change to the test cases, e.g. updated acceptance criteria should be managed as a new version of the test case treated similarly to a new test case (incl. PO approval).
+9) Non-significant changes to the test case (e.g. updated screenshots) are allowed to be done in the current approved test case version. 
+10) Every change that might require any update to the automated test case should be labeled as "automation_needs_update". Once the automated test case is reviewed the label "automation_needs_update" should be removed. 
+11) It is possible to use a label "needs_update" label to mark multiple test cases that are pending to be updated. This helps to estimate the numer of test cases that need rework and distribute the work evenly between the team members.  The label can be also used by the AQA to propose the changes to the manual test case. Automation QAs must not update the test cases scenarios in Zephyr. The scenarios are managed by the manual QAs. 
+12) Other labels, except the ones mentioned above, must not be created. 
+13) Once an existing test case is no longer valid then the status should be changed to "Deprecated". AQA team should periodically review "Deprecated" test cases that have been automated to exclude them from the regression and smoke tests. 
+14) Manual QA should periodically review the existing test cases to list them for update or deprecation. 
+Regression → all test cases with label "ready_for_automation". Goal: 100% 
+Smoke →  regression with priority = high 
+Every automated Test Case MUST be linked with a Zephyr Test Case (1:1 relationship for the new test cases, allowed one (automation) to many (manual) for the existing ones). 
+
